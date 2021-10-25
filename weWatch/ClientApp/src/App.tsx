@@ -28,8 +28,8 @@ function App() {
           <H1>Hello, World!</H1>
           <Link to={{ pathname: "https://kwejk.pl/losowy" }} target="_blank">
             <Button>see random meme</Button>
-            <p>Test!</p>
           </Link>
+          asd
         </header>
       </Container>
     </BrowserRouter>
