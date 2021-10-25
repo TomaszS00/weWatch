@@ -29,7 +29,6 @@ function App() {
           <Link to={{ pathname: "https://kwejk.pl/losowy" }} target="_blank">
             <Button>see random meme</Button>
           </Link>
-          asd
         </header>
       </Container>
     </BrowserRouter>
