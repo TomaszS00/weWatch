@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { BrowserRouter, Link } from 'react-router-dom';
+
+import './styleHelpers/normalize.css'
+
+const Container = styled.div`
+  margin: 0 auto;
+`;
+
+const H1 = styled.h1`
+  font-size: 30px;
+  font-weight: 900;
+`;
+
+const Button = styled.button`
+  padding: 15px 20px;
+  background: #4080f7;
+  color: white;
+  border-radius: 5px;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Container>
+                <header className="App-header">
+                    <H1>Hello, World!</H1>
+                    <Link
+                        to={{ pathname: 'https://kwejk.pl/losowy' }}
+                        target='_blank'
+                    >
+                        <Button>see random meme</Button>
+                    </Link>
+                </header>
+            </Container>
+        </BrowserRouter>
+    );
 }
 
 export default App;
