@@ -20,6 +20,8 @@ interface IPrivateRoute {
     component?: any;
     dynamicRedirect?: any;
     isShadowAuth?: any;
+    exact?: any;
+    path?: any;
 };
 
 const PrivateRoute: FC<IPrivateRoute> = ({ component: Component, dynamicRedirect: logicVar = false, isShadowAuth = false, ...rest }) => (
@@ -45,9 +47,10 @@ const appRoutes: IRoute[] = [
 const defaultContainer = () => (
     <>
         <Switch>
+            {console.log(appRoutes, 'appRoutes')}
             {appRoutes.map(appRoute => appRoute
                 ? appRoute.private
-                    ? <PrivateRoute key={appRoute.remountKey || appRoute.path} /* exact={appRoute.exact} path={appRoute.path} */ component={appRoute.component} /* isShadowAuth={store.getState().context.isShadowAuth} */ />
+                    ? <PrivateRoute key={appRoute.remountKey || appRoute.path} exact={appRoute.exact} path={appRoute.path} component={appRoute.component} /* isShadowAuth={store.getState().context.isShadowAuth} */ />
                     : <Route key={appRoute.remountKey || appRoute.path} exact={appRoute.exact} path={appRoute.path} render={routeProps => {
                         // if (appRoute.path !== '/' && !store.getState().context.isLoggedIn && getContextUserId() && !isIdTokenExpired(getContextUserId())) {
                         //     history.push(getLoginPath());
@@ -65,7 +68,6 @@ const defaultContainer = () => (
 export const routes = (
     <Switch>
 
-        <Route path="/login" component={LoginPage} />
         <Route path="/login" component={LoginPage} />
 
         <Route component={defaultContainer} />

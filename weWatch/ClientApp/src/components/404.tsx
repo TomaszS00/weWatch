@@ -11,7 +11,7 @@ export const PageNotFound: FC = () => {
 
     return (
         <Wrapper className="lcr-section lcr-margin-t2em">
-            Error 404
+            Error 404 - wrong page, erorr is handled 
         </Wrapper>
     );
 };
