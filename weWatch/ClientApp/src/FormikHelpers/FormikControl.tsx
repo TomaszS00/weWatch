@@ -8,20 +8,38 @@ import Textarea from './components/TextArea'
 
 
 function FormikControl(props: any) {
-  const { control, ...rest } = props
+  const { control, ...rest } = props;
+
+  enum FormikControl {
+    input = 'input',
+    textarea = 'textarea',
+    select = 'select',
+    radio = 'radio',
+    checkbox = 'checkbox',
+    date = 'date'
+  };
+
+
   switch (control) {
-    case 'input':
+
+    case FormikControl.input:
       return <Input {...rest} />
-    case 'textarea':
+
+    case FormikControl.textarea:
       return <Textarea {...rest} />
-    case 'select':
+
+    case FormikControl.select:
       return <Select {...rest} />
-    case 'radio':
+
+    case FormikControl.radio:
       return <RadioButtons {...rest} />
-    case 'checkbox':
+
+    case FormikControl.checkbox:
       return <CheckboxGroup {...rest} />
-    case 'date':
+
+    case FormikControl.date:
       return <DatePicker {...rest} />
+
     default:
       return null
   }
