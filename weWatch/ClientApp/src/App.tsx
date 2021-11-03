@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter, Link } from "react-router-dom";
+import { routes } from './routes';
+import { Router } from 'react-router-dom';
+import { history } from './components/history';
 
 import "./styleHelpers/normalize.css";
 
@@ -22,16 +24,9 @@ const Button = styled.button`
 
 function App() {
   return (
-    <BrowserRouter>
-      <Container>
-        <header className="App-header">
-          <H1>Hello, World!</H1>
-          <Link to={{ pathname: "https://kwejk.pl/losowy" }} target="_blank">
-            <Button>see random meme</Button>
-          </Link>
-        </header>
-      </Container>
-    </BrowserRouter>
+    <>
+      <Router history={history}>{routes}</Router>
+    </>
   );
 }
 
