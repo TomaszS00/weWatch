@@ -32,8 +32,8 @@ namespace weWatch
         {
             services.AddControllersWithViews();
             services.AddControllers();
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<ITokenService, TokenService>();
+            //services.AddTransient<IUserRepository, UserRepository>();
+            //services.AddTransient<ITokenService, TokenService>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
