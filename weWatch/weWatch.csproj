@@ -6,7 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\Auth\RegisterPage.tsx" />
+    <None Remove="ClientApp\src\FormikHelpers\components\SubmitButton.tsx" />
+    <None Remove="ClientApp\src\typings\SubmitButton.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\components\Auth\RegisterPage.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\FormikHelpers\components\SubmitButton.tsx" />
+    <TypeScriptCompile Include="ClientApp\src\typings\SubmitButton.ts" />
   </ItemGroup>
 
 </Project>

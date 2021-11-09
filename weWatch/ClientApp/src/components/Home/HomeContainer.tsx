@@ -5,6 +5,7 @@ const HomeContainer: FC<{}> = () => {
     return (
         <>
             <Link to={`/login`}>Login page</Link>
+            <Link to={`/register`}>Register page</Link>
             <h2>HomePage</h2>
         </>
     )

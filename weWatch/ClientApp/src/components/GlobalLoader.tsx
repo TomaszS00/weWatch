@@ -27,7 +27,7 @@ const Loader = styled.div`
 
 const Bar = styled.div`
     animation: ${sideToSide} 2s ease-in-out infinite;
-    background: linear-gradient(to right, ${colorStack.darkBlueButton} 0%, ${colorStack.actionBlue} 100%);
+    background: linear-gradient(to right, ${colorStack.primary} 0%, ${colorStack.secondary} 100%);
     position: absolute;
     height: 100%;
     width: 50%;
@@ -44,7 +44,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: ${colorStack.bodyGrey};
+    background: ${colorStack.white};
     z-index: 2147484000; /* because intercom's z-index is 2147483000... */
     transition: all 300ms;
     opacity: 0;

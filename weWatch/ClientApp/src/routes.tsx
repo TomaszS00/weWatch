@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { Switch, RouteComponentProps } from 'react-router';
 
 import LoginPage from './components/Auth/LoginPage'
+import RegisterPage from './components/Auth/RegisterPage'
 import { PageNotFound } from './components/404';
 
 import Home from './routes/Home';
@@ -69,6 +70,7 @@ export const routes = (
     <Switch>
 
         <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
 
         <Route component={defaultContainer} />
         <Route component={() => <PageNotFound />} />

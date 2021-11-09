@@ -13,3 +13,7 @@ export const fontSize = {
     30: '2rem',
     32: '2.3rem'
 };
+
+export const fontFamily = {
+    main: '"Montserrat", sans-serif'
+}

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+﻿import React, { FC } from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from '../../FormikHelpers/FormikControl'
@@ -7,13 +7,15 @@ import { Link } from 'react-router-dom'
 import { history } from '../history';
 import SubmitButton from '../../FormikHelpers/components/SubmitButton'
 
-const LoginPage: FC = () => {
+const RegisterPage: FC = () => {
     const initialValues = {
+        name: '',
         email: '',
         password: ''
     }
 
     const validationSchema = Yup.object({
+        name: Yup.string().required('Required'),
         email: Yup.string()
             .email('Invalid email format')
             .required('Required'),
@@ -41,7 +43,12 @@ const LoginPage: FC = () => {
                         <Form>
                             <FormikControl
                                 control='input'
-                                // control='chakraInput'
+                                type='text'
+                                label='Name'
+                                name='name'
+                            />
+                            <FormikControl
+                                control='input'
                                 type='email'
                                 label='Email'
                                 name='email'
@@ -54,7 +61,7 @@ const LoginPage: FC = () => {
                             />
                             <SubmitButton
                                 isDisabled={!isValid}
-                                text="Login"
+                                text='Sign up'
                             />
                         </Form>
                     )
@@ -64,4 +71,4 @@ const LoginPage: FC = () => {
     )
 }
 
-export default LoginPage
+export default RegisterPage
