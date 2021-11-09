@@ -16,7 +16,10 @@ const Select: FC = (props: any) => {
                     )
                 })}
             </Field>
-            <ErrorMessage component={TextError} name={name} />
+            {
+                //FIXME: typescript error with props
+                //<ErrorMessage component={TextError} name={name} />
+            }
         </div>
     );
 };
