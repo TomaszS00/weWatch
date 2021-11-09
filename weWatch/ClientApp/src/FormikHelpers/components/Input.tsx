@@ -8,7 +8,10 @@ const Input: FC = (props: any) => {
         <div className='form-control'>
             <label htmlFor={name}>{label}</label>
             <Field id={name} name={name} {...rest} />
-            <ErrorMessage component={TextError} name={name} />
+            {
+                //FIXME: typescript error with props
+                //<ErrorMessage component={TextError} name={name} />
+            }
         </div>
     );
 };
